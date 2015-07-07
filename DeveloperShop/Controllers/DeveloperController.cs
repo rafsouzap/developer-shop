@@ -42,27 +42,49 @@ namespace DeveloperShop.Controllers
         {
             IEnumerable<GitHubUser> listGitHubUsers;
 
-            try
+            //Teste
+            var teste = new List<GitHubUser>();
+
+            for (var i = 0; i <= 5; i++)
             {
-                var organizationName = ConfigurationManager.AppSettings.Get("usernameOrganization");
-                var urlApiMembers = string.Format("https://api.github.com/orgs/{0}/members", organizationName);
-
-                listGitHubUsers = JsonConvert.DeserializeObject<IList<GitHubUser>>(GetJsonString(urlApiMembers));
-
-                foreach (var user in listGitHubUsers)
+                var gitHubUser = new GitHubUser
                 {
-                    GitHubUser gitHubUser = JsonConvert.DeserializeObject<GitHubUser>(GetJsonString(user.url));
-                    user.price = EstimatedPrice(gitHubUser.public_repos, gitHubUser.followers);
-                    user.public_repos = gitHubUser.public_repos;
-                    user.followers = gitHubUser.followers;
-                    user.email = gitHubUser.email;
-                    user.name = gitHubUser.name;
-                }
+                    avatar_url = "https://avatars0.githubusercontent.com/u/2496520?v=3&s=460",
+                    email = "rafsouzap@icloud.com",
+                    id = 10101010,
+                    login = "rafsouzap",
+                    name = "Rafael de Paula",
+                    followers = 10,
+                    public_repos = 10
+                };
+                gitHubUser.price = EstimatedPrice(gitHubUser.public_repos, gitHubUser.followers);
+
+                teste.Add(gitHubUser);
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+
+            listGitHubUsers = teste.AsEnumerable();
+
+            //try
+            //{
+            //    var organizationName = ConfigurationManager.AppSettings.Get("usernameOrganization");
+            //    var urlApiMembers = string.Format("https://api.github.com/orgs/{0}/members", organizationName);
+
+            //    listGitHubUsers = JsonConvert.DeserializeObject<IList<GitHubUser>>(GetJsonString(urlApiMembers));
+
+            //    foreach (var user in listGitHubUsers)
+            //    {
+            //        GitHubUser gitHubUser = JsonConvert.DeserializeObject<GitHubUser>(GetJsonString(user.url));
+            //        user.price = EstimatedPrice(gitHubUser.public_repos, gitHubUser.followers);
+            //        user.public_repos = gitHubUser.public_repos;
+            //        user.followers = gitHubUser.followers;
+            //        user.email = gitHubUser.email;
+            //        user.name = gitHubUser.name;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw ex;
+            //}
 
             return listGitHubUsers;
         }

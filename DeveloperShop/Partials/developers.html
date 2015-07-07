@@ -1,5 +1,4 @@
 ﻿<h3 class="text-left">Developers</h3>
-
 <div class="table-responsive">
     <table class="table table-striped">
         <thead>
@@ -15,9 +14,9 @@
             <tr ng-repeat="developer in developers">
                 <td><img ng-src="{{developer.avatar_url}}" width="40" height="40" class="img-rounded"></td>
                 <td>{{developer.name}}</td>
-                <td>{{developer.username}}</td>
+                <td>{{developer.login}}</td>
                 <td>{{developer.price | currency}}</td>
-                <td><button class="btn btn-info btn-xs">Add to Cart</button></td>
+                <td><button class="btn btn-info btn-sm">Add to Cart</button></td>
             </tr>
         </tbody>
     </table>

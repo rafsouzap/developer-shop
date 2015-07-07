@@ -7,6 +7,42 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body class="container">
+    <h2 class="text-left">DevShop</h2> 
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th width="50">&nbsp;</th>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Price</th>
+                    <th>Hours</th>
+                    <th>Total</th>
+                    <th width="75">&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="https://avatars0.githubusercontent.com/u/2496520?v=3&s=460" width="40" height="40" class="img-rounded"></td>
+                    <td>Rafael de Paula</td>
+                    <td>rafsouzap</td>
+                    <td>$73</td>
+                    <td>2</td>
+                    <td>$146</td>
+                    <td><button class="btn btn-danger btn-sm">Remove</button></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td colspan="3">Total</td>
+                    <td>4</td>
+                    <td>$292</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>       
     <div ng-view></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
